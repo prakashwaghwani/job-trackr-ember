@@ -1,0 +1,8 @@
+<ul class="container">
+{{#each model as |user|}}
+<li>
+  {{user.firstName}} - {{user.lastName}}<br>
+</li>
+{{/each}}
+</ul>
+{{outlet}}
