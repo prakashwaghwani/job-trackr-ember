@@ -1,0 +1,10 @@
+<form {{action 'createUser' on="submit"}}>
+  {{input type="text" value=firstName placeholder="First Name"}}<br>
+  {{input type="text" value=lastName placeholder="Last Name"}}<br>
+  {{input type="email" value=email placeholder="Email"}}<br>
+  {{input type="password" value=password placeholder="Password"}}<br>
+  <button type="submit">Create User</button>
+
+</form>
+
+  {{outlet}}

@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('opportunity', { path: '/opportunities/:opportunity_id' });
   });
   this.route('login');
+  this.route('signup');
 });
 
 export default Router;
