@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="panel text-center">
+    <h2>{{model.name}}</h2>
+  </div>
+
+  <div class="row">  
+      <!-- contacts -->
+      <div id="contact-opportunity" class="col-md-4">
+        <ul>
+          {{#each model.contacts as |contact|}}
+          <li>{{contact}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <!-- opportunity info -->
+      <div id="opportunity-info" class="col-md-6 col-md-offset-1">
+        <p>
+          {{model.description}}
+        </p>
+      </div>
+
+      <div class="col-md-6 col-md-offset-5">
+        <button {{action "new_note"}}>New Note!</button>
+          <form>
+
+          </form>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+{{outlet}}
