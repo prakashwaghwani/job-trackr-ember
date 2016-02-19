@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('users');
-  this.route('opportunities');
+  this.route('opportunities', function() {
+    this.route('opportunity', { path: '/opportunities/:opportunity_id' });
+  });
   this.route('login');
   this.route('signup');
 });
