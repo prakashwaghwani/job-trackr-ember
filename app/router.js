@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('users');
   this.route('opportunities');
   this.route('login');
+  this.route('signup');
 });
 
 export default Router;
