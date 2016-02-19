@@ -5,9 +5,9 @@
       <li>{{link-to "Users" "users"}}</li>
 
     {{#if session.isAuthenticated}}
-      <li>Logout</li>
+      <li><button {{action "logout"}}>Logout</button></li>
     {{else}}
-      <li>Login</li>
+      <li>{{link-to "Login" "login"}}</li>
     {{/if}}
 
     </ul>
