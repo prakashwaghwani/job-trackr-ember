@@ -3,6 +3,7 @@
     <ul class="list-inline">
       <li>{{link-to "Home" "index"}}</li>
       <li>{{link-to "Users" "users"}}</li>
+      <li>{{link-to "Notes" "notes"}}</li>
 
     {{#if session.isAuthenticated}}
       <li><button {{action "logout"}}>Logout</button></li>

@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('opportunities');
   this.route('login');
   this.route('signup');
+  this.route('notes');
 });
 
 export default Router;
