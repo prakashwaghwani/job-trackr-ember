@@ -19,21 +19,19 @@
           {{model.description}}
         </p>
       </div>
-
+      <!-- Notes! - below opportunity info  -->
       <div class="col-md-6 col-md-offset-5">
-        <button {{action "new_note"}}>New Note!</button>
-          <form>
-
+        <button {{action "newNote"}}>New Note!</button>
+        <!-- this form should be hidden until new note is clicked -->
+          {{#if show_note_form}}
+          <form {{action 'createNote' on="submit"}}>
+            {{textarea value=content cols="100" rows="10"}}
+            <button type="submit">Create Note</button>
           </form>
+          {{/if}}
+
       </div>
   </div>
-
-
-
-
-
-
-
 
 
 </div>
