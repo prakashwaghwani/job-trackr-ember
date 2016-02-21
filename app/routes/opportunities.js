@@ -12,6 +12,12 @@ export default Ember.Route.extend({
         savedOpportunity.get('contacts').invoke('save');
         this.transitionTo('opportunities.opportunity', savedOpportunity);
       });
+    },
+    delete(opportunity){
+      opportunity.deleteRecord();
+      opportunity.save();
     }
   }
+
+
 });
