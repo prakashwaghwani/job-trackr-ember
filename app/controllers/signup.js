@@ -16,7 +16,6 @@ export default Ember.Controller.extend({
       });
 
       user.save();
-      this.transitionTo("users.user", user);
     }
   }
 });

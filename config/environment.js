@@ -9,6 +9,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'connect-src': "*"
     },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -21,6 +22,12 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+  ENV['ember-simple-auth'] = {
+  routeAfterAuthentication: 'dashboard',
+  routeIfAlreadyAuthenticated: 'dashboard'
+};
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

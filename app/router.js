@@ -22,6 +22,7 @@ Router.map(function() {
       path: ':note_id'
     });
   });
+  this.route('dashboard');
 });
 
 export default Router;

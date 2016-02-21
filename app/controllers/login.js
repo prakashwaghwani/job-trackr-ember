@@ -1,13 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
+  applicationController: Ember.inject.controller('application'),
   actions: {
-  authenticate() {
-    let { identification, password } = this.getProperties('identification', 'password');
-    this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
-      this.set('errorMessage', reason.error || reason);
-    });
+    setCurrentUser(user){
+      user = this.store.createRecord("user", {firstName: user._internalModel._data.firstName, email: user._internalModel._data.email});
+      this.get("applicationController").set('currentUser', user);
+    }
   }
-}
 });
