@@ -1,1 +1,17 @@
-{{outlet}}
+<div class="row">
+  <div class="col-md-6">
+  <ul>
+    <h3 id="title">All opportunities</h3>
+  {{#each model as |opportunity|}}
+  <li>
+    {{link-to opportunity.name "opportunities.opportunity" opportunity}}<br>
+    {{opportunity.position}}<br>
+    {{opportunity.description}}<br>
+  </li>
+  {{/each}}
+  </ul>
+</div>
+<div class="col-md-6">
+  {{outlet}}
+</div>
+</div>
