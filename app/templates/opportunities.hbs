@@ -1,13 +1,18 @@
 <div class="row">
+
+  <div class="col-md-3">
+    <h3>All Contacts</h3>
+
+  </div>
   
-  <div class="col-md-6">
+  <div class="col-md-9">
     {{outlet}}
     <ul>
       <h3 id="title">All opportunities</h3>
       {{link-to "New Opportunity" "opportunities.new" }}
       {{#each model as |opportunity|}}
         <li>
-          {{link-to opportunity.name "opportunities.opportunity" opportunity}}<br>
+          {{link-to opportunity.name "opportunity.opportunity" opportunity}}<br>
           {{opportunity.position}}<br>
           {{opportunity.description}}<br>
           <button {{action 'delete' opportunity}}>Delete</button>

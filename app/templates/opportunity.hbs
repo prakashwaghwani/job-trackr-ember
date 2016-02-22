@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="panel text-center">
+    <h2>{{model.name}}</h2>
+  </div>
+
+  <div class="row">
+      <!-- contacts -->
+      <div id="contact-opportunity" class="col-md-4">
+        <ul>
+          {{#each model.contacts as |contact|}}
+          <li>{{contact}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <!-- opportunity info -->
+      <div id="opportunity-info" class="col-md-6 col-md-offset-1">
+        <p>
+          {{model.description}}
+        </p>
+      </div>
+      <!-- Notes! - below opportunity info  -->
+      <div class="col-md-6 col-md-offset-5">
+        <button {{action "newNote"}}>New Note!</button>
+        <!-- this form should be hidden until new note is clicked -->
+          {{#if show_note_form}}
+          <form {{action 'createNote' on="submit"}}>
+            {{textarea value=content cols="100" rows="10"}}
+            <button type="submit">Create Note</button>
+          </form>
+          {{/if}}
+
+      </div>
+  </div>
+
+
+</div>
+
+{{outlet}}
