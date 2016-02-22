@@ -4,9 +4,11 @@
     <h2>{{model.name}}</h2>
   </div>
 
+
+
   <div class="row">
       <!-- contacts -->
-      <div id="contact-opportunity" class="col-md-4">
+      <div id="contact-opportunity" class="col-md-3">
       <h3>Contacts</h3>
       <button {{action "newContact" }}>New Contact!</button>
         <br>
@@ -24,18 +26,19 @@
           {{/each}}
       </div>
 
-      <!-- opportunity info -->
-      <div id="opportunity-info" class="col-md-6 text-center">
-        <p>
-          Opportunity for: {{model.position}}
-        </p>
-        <p>
-          Description: {{model.description}}
-        </p>
+      <div id="note-opportunity" class="col-md-4">
+        <!-- opportunity info -->
+        <p><strong>Opportunity for:</strong> {{model.position}}</p>
+        <p><strong>Description:</strong> {{model.description}}</p>
 
-      <!-- Notes   -->
-        <h3>Notes</h3>
-        <button {{action "newNote" }}>New Note!</button>
+        <br>
+
+        <!-- Notes   -->
+        <div class="text-center">
+          <h3>Updates</h3>
+          <button {{action "newNote" }}>New Update!</button>
+        </div>
+        
         <!-- this form should be hidden until new note is clicked -->
         <br>
         <br>
@@ -43,14 +46,33 @@
           {{new-note action="createNote"}}
           {{/if}}
 
-            <!-- render notes -->
-          {{#each model.notes as |note|}}
-          <div id="notes_opportunity">
-            <br>
-            <p>{{note.content}}</p>
-            <button {{action 'deleteNote' note}}>Delete Note</button>
-          </div>
-          {{/each}}
+          <!-- render notes -->
+        {{#each model.notes as |note|}}
+        <div id="notes_opportunity">
+          <br>
+          <p>{{note.content}}</p>
+          <em>{{format-date note.created_at}}</em><br>
+          <button {{action 'deleteNote' note}}>Delete Note</button>
+        </div>
+        {{/each}}
       </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
