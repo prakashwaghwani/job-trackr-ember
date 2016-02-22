@@ -6,9 +6,10 @@
   </div>
   
   <div class="col-md-9">
-    {{outlet}}
+    
     <ul>
       <h3 id="title">All opportunities</h3>
+      {{outlet}}
       {{link-to "New Opportunity" "opportunities.new" }}
       {{#each model as |opportunity|}}
         <li>
