@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-    {{#link-to 'dashboard' class="navbar-brand"}}JobTrackr{{/link-to}}
+    {{#link-to 'home' class="navbar-brand"}}JobTrackr{{/link-to}}
 
     </div>
 
@@ -15,6 +15,7 @@
 
 
         {{#if session.isAuthenticated}}
+        <li>{{link-to "Dashboard" "dashboard"}}</li>
         <li>{{link-to "Users" "users"}}</li>
         <li>{{link-to "Notes" "notes"}}</li>
         <li>{{link-to "Opportunities" "opportunities"}}</li>
