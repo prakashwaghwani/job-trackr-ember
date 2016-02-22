@@ -17,10 +17,10 @@ Router.map(function() {
     this.route('new');
   });
 
- this.route('opportunity', function() {
-    this.route('opportunity', {
-    path: ':opportunity_id' });
-  });
+  this.route('opportunity', function() {
+     this.route('opportunity', {
+     path: ':opportunity_id' });
+   });
 
   this.route('login');
   this.route('signup');
@@ -31,6 +31,7 @@ Router.map(function() {
   });
   this.route('dashboard');
   this.route('contacts');
+  this.route('home');
 });
 
 export default Router;
