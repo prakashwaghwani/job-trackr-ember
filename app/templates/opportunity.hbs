@@ -25,17 +25,15 @@
       </div>
 
       <!-- opportunity info -->
-      <div id="opportunity-info" class="col-md-6">
+      <div id="opportunity-info" class="col-md-6 text-center">
         <p>
-          Opportunity for: {{model.title}}
+          Opportunity for: {{model.position}}
         </p>
         <p>
           Description: {{model.description}}
         </p>
-      </div>
 
       <!-- Notes   -->
-      <div class="col-md-6">
         <h3>Notes</h3>
         <button {{action "newNote" }}>New Note!</button>
         <!-- this form should be hidden until new note is clicked -->
@@ -47,7 +45,8 @@
 
             <!-- render notes -->
           {{#each model.notes as |note|}}
-          <div class="container">
+          <div id="notes_opportunity">
+            <br>
             <p>{{note.content}}</p>
             <button {{action 'deleteNote' note}}>Delete Note</button>
           </div>
