@@ -12,6 +12,8 @@ Router.map(function() {
     });
   });
   this.route('opportunities', function() {
+    this.route('opportunity', {
+      path: ':opportunity_id' });
     this.route('new');
   });
 
