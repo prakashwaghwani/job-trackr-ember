@@ -8,7 +8,13 @@
       <!-- contacts -->
       <div id="contact-opportunity" class="col-md-4">
       <h3>Contacts</h3>
-        {{link-to "Create new Contact"}}<br>
+      <button {{action "newContact" }}>New Contact!</button>
+        <br>
+        <br>
+          {{#if showContactForm}}
+          {{new-contact action="createContact"}}
+          {{/if}}
+
           {{#each model.contacts as |contact|}}
             {{contact.name}}
             <ul>
@@ -27,7 +33,7 @@
           Description: {{model.description}}
         </p>
       </div>
-      
+
       <!-- Notes   -->
       <div class="col-md-6">
         <h3>Notes</h3>
@@ -35,21 +41,17 @@
         <!-- this form should be hidden until new note is clicked -->
         <br>
         <br>
-          {{#if showForm}}
-          <form>
-            {{textarea value=content cols="100" rows="10"}}
-            <br>
-            <button {{action "save"}}>Create Note</button>
-          </form>
+          {{#if showNoteForm}}
+          {{new-note action="createNote"}}
           {{/if}}
 
             <!-- render notes -->
-          <!-- {{#each model.notes as |note|}}
+          {{#each model.notes as |note|}}
           <div class="container">
             <p>{{note.content}}</p>
             <button {{action 'deleteNote' note}}>Delete Note</button>
           </div>
-          {{/each}} -->
+          {{/each}}
       </div>
   </div>
 </div>
