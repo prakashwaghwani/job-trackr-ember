@@ -8,6 +8,7 @@
       <!-- contacts -->
       <div id="contact-opportunity" class="col-md-4">
       <h3>Contacts</h3>
+      <button {{action "newContact" }}>New Contact!</button>
         <br>
         <br>
           {{#if showContactForm}}
@@ -45,12 +46,12 @@
           {{/if}}
 
             <!-- render notes -->
-          <!-- {{#each model.notes as |note|}}
+          {{#each model.notes as |note|}}
           <div class="container">
             <p>{{note.content}}</p>
             <button {{action 'deleteNote' note}}>Delete Note</button>
           </div>
-          {{/each}} -->
+          {{/each}}
       </div>
   </div>
 </div>

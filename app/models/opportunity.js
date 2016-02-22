@@ -6,5 +6,5 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   user: DS.belongsTo('user'),
   contacts: DS.hasMany('contact', { async: true }),
-  notes: DS.hasMany('note')
+  notes: DS.hasMany('note', { async: true })
 });
