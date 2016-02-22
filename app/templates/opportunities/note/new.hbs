@@ -1,0 +1,6 @@
+<h2>New Note</h2>
+<form {{action 'createNote' on="submit"}}>
+  {{textarea value=content cols="100" rows="10"}}
+  <button {{action "save"}}>Create Note</button>
+</form>
+{{outlet}}
