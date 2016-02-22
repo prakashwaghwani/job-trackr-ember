@@ -4,13 +4,24 @@
     <h3>All Contacts</h3>
 
   </div>
-  
-  <div class="col-md-9">
-    
-    <ul>
-      <h3 id="title">All opportunities</h3>
-      {{outlet}}
-      {{link-to "New Opportunity" "opportunities.new" }}
+
+      <div class="col-md-6">
+        <h3>Create New Opportunity</h3>
+        <button {{action "newOpportunity" }}>New Opportunity!</button>
+        <!-- this form should be hidden until new note is clicked -->
+        <br>
+        <br>
+          {{#if showOpportunityForm}}
+          {{opportunity-forms action="addOpportunity"}}
+          {{/if}}
+        </div>
+
+        <div class="col-md-9">
+
+          <ul>
+            <h3 id="title">All opportunities</h3>
+            {{outlet}}
+      <!-- {{link-to "New Opportunity" "opportunities.new" }} -->
       {{#each model as |opportunity|}}
         <li>
           {{link-to opportunity.name "opportunity.opportunity" opportunity}}<br>

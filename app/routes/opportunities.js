@@ -5,12 +5,13 @@ export default Ember.Route.extend({
     return this.store.findAll('opportunity');
   },
   actions: {
-    addOpportunity(){
-      let opportunity = this.modelFor(this.routeName);
-      opportunity.save().then((savedOpportunity) => {
+    addOpportunity(name, position, description){
+      // let opportunity = this.modelFor(this.routeName);
+      let newOpportunity = this.store.createRecord('opportunity',{name: name, position: position, description: description});
+      newOpportunity.save().then((savedOpportunity) => {
         savedOpportunity.get('notes').invoke('save');
         savedOpportunity.get('contacts').invoke('save');
-        this.transitionTo('opportunities.opportunity', savedOpportunity);
+        // this.transitionTo('opportunities.opportunity', savedOpportunity);
       });
     },
     delete(opportunity){
@@ -18,6 +19,4 @@ export default Ember.Route.extend({
       opportunity.save();
     }
   }
-
-
 });
