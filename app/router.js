@@ -14,11 +14,11 @@ Router.map(function() {
   this.route('opportunities', function() {
     this.route('opportunity', {
       path: ':opportunity_id' });
-    this.route('new');
   });
 
   this.route('login');
   this.route('signup');
+
   this.route('notes', function() {
     this.route('note', {
       path: ':note_id'
