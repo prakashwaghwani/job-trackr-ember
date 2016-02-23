@@ -50,6 +50,8 @@
           <div class="container">
             <p>{{note.content}}</p>
             <button class="btn btn-primary btn-sm" {{action 'deleteNote' note}}>Delete Note</button>
+            <em>{{format-date note.created_at}}</em><br>
+            <button {{action 'deleteNote' note}}>Delete Note</button>
           </div>
           {{/each}}
       </div>
