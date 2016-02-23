@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       this.get('session').invalidate();
     },
     makeTrue(){
-      this.set('showEverything', true);
+      this.set('showEverything', false);
     }
   }
 });

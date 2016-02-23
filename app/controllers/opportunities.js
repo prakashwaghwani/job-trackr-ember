@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   showOpportunityForm: false,
-  showEverything: true,
+  showEverything: false,
   actions: {
     newOpportunity(){
       this.toggleProperty('showOpportunityForm');
