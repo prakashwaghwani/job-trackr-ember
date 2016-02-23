@@ -17,11 +17,6 @@ Router.map(function() {
     this.route('new');
   });
 
-  this.route('opportunity', function() {
-     this.route('opportunity', {
-     path: ':opportunity_id' });
-   });
-
   this.route('login');
   this.route('signup');
   this.route('notes', function() {

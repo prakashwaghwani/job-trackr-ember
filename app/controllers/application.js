@@ -3,12 +3,13 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   currentUser: null,
   session: Ember.inject.service('session'),
+  needs:['opportunities'],
+  showEverything: Ember.computed.alias('controllers.opportunities.showEverything'),
 
   updateCurrentUser: function(){
 
     if (this.get("session.isAuthenticated")){
-      this.get('store').findRecord('user', 'me').then((user) => {
-        user = this.store.createRecord('user', {firstName: user._internalModel._data.firstName, email: user._internalModel._data.email});
+      this.get('store').findRecord('user', 'me').then((user)=>{
         this.set("currentUser", user);
       });
     }
@@ -16,6 +17,9 @@ export default Ember.Controller.extend({
   actions: {
     logout(){
       this.get('session').invalidate();
+    },
+    makeTrue(){
+      this.set('showEverything', true);
     }
   }
 });

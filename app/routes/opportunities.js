@@ -6,12 +6,10 @@ export default Ember.Route.extend({
   },
   actions: {
     addOpportunity(name, position, description){
-      // let opportunity = this.modelFor(this.routeName);
       let newOpportunity = this.store.createRecord('opportunity',{name: name, position: position, description: description});
       newOpportunity.save().then((savedOpportunity) => {
         savedOpportunity.get('notes').invoke('save');
         savedOpportunity.get('contacts').invoke('save');
-        // this.transitionTo('opportunities.opportunity', savedOpportunity);
       });
     },
     delete(opportunity){
