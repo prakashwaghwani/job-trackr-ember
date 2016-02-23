@@ -8,6 +8,9 @@ export default Ember.Component.extend({
       let description = this.get('description');
 
       this.sendAction('action', name, position, description);
+      this.set('name', "");
+      this.set('position', "");
+      this.set('description', "");
     }
   }
 });

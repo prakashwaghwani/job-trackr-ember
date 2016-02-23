@@ -12,10 +12,10 @@ export default Ember.Route.extend({
       newNote.save();
     },
     createContact(name,phone,email){
-
-      let opportunity = this.modelFor(this.routeName);
-      let newContact = this.store.createRecord('contact',{name: name, phone: phone, email: email, opportunity: opportunity});
-      newContact.save();
+     let opportunity = this.modelFor(this.routeName);
+     let newContact = this.store.createRecord('contact',{name: name, phone: phone, email: email});
+     newContact.get('opportunities').pushObject(opportunity);
+     newContact.save();
     },
     deleteNote(note){
       note.deleteRecord();
