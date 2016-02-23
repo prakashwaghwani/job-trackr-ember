@@ -49,6 +49,7 @@
           {{#each model.notes as |note|}}
           <div class="container">
             <p>{{note.content}}</p>
+            <em>{{format-date note.created_at}}</em><br>
             <button {{action 'deleteNote' note}}>Delete Note</button>
           </div>
           {{/each}}
