@@ -6,7 +6,7 @@
 
   <div class="row">
       <!-- contacts -->
-      <div id="contact-opportunity" class="col-md-4">
+      <div class="col-md-4">
       <h3>Contacts</h3>
       <button {{action "newContact" }}>New Contact!</button>
         <br>
@@ -25,7 +25,7 @@
       </div>
 
       <!-- opportunity info -->
-      <div id="opportunity-info" class="col-md-6 text-center">
+      <div  class="col-md-6 col-md-offset-1 text-center">
         <p>
           Opportunity for: {{model.position}}
         </p>
@@ -45,7 +45,7 @@
 
             <!-- render notes -->
           {{#each model.notes as |note|}}
-          <div id="notes_opportunity">
+          <div>
             <br>
             <p>{{note.content}}</p>
             <button {{action 'deleteNote' note}}>Delete Note</button>
