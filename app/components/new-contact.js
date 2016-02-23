@@ -8,6 +8,10 @@ export default Ember.Component.extend({
       let phone=this.get('phone');
       let email=this.get('email');
       this.sendAction('action',name, phone, email);
+      this.set('name', "");
+      this.set('phone', "");
+      this.set('email', "");
+      this.sendAction('clearContactForm');
     }
   }
 });

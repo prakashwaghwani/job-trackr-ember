@@ -1,6 +1,6 @@
 {{yield}}
 
-<form class="form-horizontal">
+<form class="form-horizontal" {{action "submit" on="submit"}}>
   <div class="form-group">
     <label for="opportunity-name">Name</label>
     {{input value=name class="form-control" id="opportunity-name"}}
@@ -13,6 +13,9 @@
     <label for="opportunity-description">Description</label>
     {{input value=description class="form-control" id="opportunity-description"}}
   </div>
+  <div class="form-group">
+    {{input type="submit" value=create class="button"}}
+  </div>
 
   <!-- <button type="button" {{action "addIngredient"}}>+</button>
   {{#each drink.proportions as |proportion|}}
@@ -21,5 +24,5 @@
       {{input value=proportion.ingredient class="form-control" placeholder="Vodka"}}
     </div>
   {{/each}} -->
-  <button class="btn btn-primary btn-sm" {{action "submit"}}>Submit</button>
+  <!-- <button class="btn btn-primary btn-sm" {{action "submit"}}>Submit</button> -->
 </form>
