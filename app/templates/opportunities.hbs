@@ -6,7 +6,7 @@
     <h2 id="title">Welcome to Your Dashboard!!</h2>
     <h3><a href="/opportunities" {{action 'newOpportunity'}}>Add an Opportunity</a></h3>
     {{#if showOpportunityForm}}
-    {{opportunity-forms action="addOpportunity"}}
+    {{opportunity-forms action="addOpportunity" clearForm="newOpportunity"}}
     {{/if}}
   </div>
 

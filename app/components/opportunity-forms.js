@@ -11,6 +11,7 @@ export default Ember.Component.extend({
       this.set('name', "");
       this.set('position', "");
       this.set('description', "");
+      this.sendAction('clearForm');
     }
   }
 });

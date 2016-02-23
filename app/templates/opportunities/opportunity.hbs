@@ -16,7 +16,7 @@
         <br>
         <br>
           {{#if showContactForm}}
-          {{new-contact action="createContact"}}
+          {{new-contact action="createContact" clearContactForm="newContact"}}
           {{/if}}
 
           {{#each model.contacts as |contact|}}
@@ -44,7 +44,7 @@
         <br>
         <br>
           {{#if showNoteForm}}
-          {{new-note action="createNote"}}
+          {{new-note action="createNote" clearNoteForm="newNote"}}
           {{/if}}
             <!-- render notes -->
             <br>
