@@ -2,9 +2,13 @@
 
   <div class="panel text-center">
     <h2>{{model.name}}</h2>
+    <p>
+      Opportunity for: {{model.position}}
+    </p>
+    <p>
+      Description: {{model.description}}
+    </p>
   </div>
-
-  <div class="row">
       <!-- contacts -->
       <div id="contact-opportunity" class="col-md-4">
       <h3>Contacts</h3>
@@ -16,44 +20,43 @@
           {{/if}}
 
           {{#each model.contacts as |contact|}}
-            {{contact.name}}
-            <ul>
-              <li>{{contact.email}}</li>
-              <li>{{contact.phone}}</li>
-            </ul>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h5 class="panel-title">{{contact.name}}</h5>
+            </div>
+            <div class="panel-body">
+              <ul>
+              <li>Email: {{contact.email}}</li>
+              <li>Phone: {{contact.phone}}</li>
+              </ul>
+            </div>
+            <button class="btn btn-primary btn-sm" {{action 'deleteNote' note}}>Delete Note</button>
+          </div>
           {{/each}}
       </div>
 
-      <!-- opportunity info -->
-      <div id="opportunity-info" class="col-md-6">
-        <p>
-          Opportunity for: {{model.title}}
-        </p>
-        <p>
-          Description: {{model.description}}
-        </p>
-      </div>
-
       <!-- Notes   -->
-      <div class="col-md-6">
+      <div id="note-info" class="col-md-4 col-md-offset-1">
         <h3>Notes</h3>
         <button class="btn btn-primary btn-sm" {{action "newNote" }}>New Note!</button>
         <!-- this form should be hidden until new note is clicked -->
+
         <br>
         <br>
           {{#if showNoteForm}}
           {{new-note action="createNote"}}
           {{/if}}
-
             <!-- render notes -->
+            <br>
           {{#each model.notes as |note|}}
-          <div class="container">
-            <p>{{note.content}}</p>
-            <button class="btn btn-primary btn-sm" {{action 'deleteNote' note}}>Delete Note</button>
-            <em>{{format-date note.created_at}}</em><br>
-            <button {{action 'deleteNote' note}}>Delete Note</button>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+                <p>{{note.content}}</p>
+                <em>{{format-date note.created_at}}</em><br>
+            </div>
           </div>
+          <button class="btn btn-primary btn-sm" {{action 'deleteNote' note}}>Delete Note</button>
+          <br><br>
           {{/each}}
       </div>
-  </div>
 </div>
