@@ -11,6 +11,9 @@ export default Ember.Route.extend({
         savedOpportunity.get('notes').invoke('save');
         savedOpportunity.get('contacts').invoke('save');
       });
+      this.set(name, false);
+      this.set(position, false);
+      this.set(description, false);
     },
     delete(opportunity){
       opportunity.deleteRecord();
