@@ -1,24 +1,27 @@
+{{#if showEverything}}
+
 <div class="row">
-
-  <div class="col-md-3">
-    <h3>All Contacts</h3>
-
+  <div class="col-md-5">
+    <h2 id="title">Welcome to Your Dashboard!!</h2>
+    <h3><a href="/opportunities" {{action 'newOpportunity'}}>Add an Opportunity</a></h3>
+    {{#if showOpportunityForm}}
+    {{opportunity-forms action="addOpportunity"}}
+    {{/if}}
   </div>
-  
-  <div class="col-md-9">
-    
+
+  <div id="opportunities" class="col-md-6 col-md-offset-1">
     <ul>
-      <h3 id="title">All opportunities</h3>
-      {{outlet}}
-      {{link-to "New Opportunity" "opportunities.new" }}
+      <h2 id="title">All Opportunities</h2>
       {{#each model as |opportunity|}}
         <li>
-          {{link-to opportunity.name "opportunity.opportunity" opportunity}}<br>
+          <h3 {{action "toggleOpportunity" opportunity.id}}>{{opportunity.name}}</h3>
           {{opportunity.position}}<br>
           {{opportunity.description}}<br>
-          <button {{action 'delete' opportunity}}>Delete</button>
+          <button class="btn btn-primary btn-sm" {{action 'delete' opportunity}}>Delete</button>
         </li>
       {{/each}}
     </ul>
   </div>
 </div>
+{{/if}}
+{{outlet}}

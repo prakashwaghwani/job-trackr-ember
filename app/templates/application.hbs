@@ -13,12 +13,8 @@
           </li>
           {{/if}}
 
-
         {{#if session.isAuthenticated}}
-        <li>{{link-to "Dashboard" "dashboard"}}</li>
-        <li>{{link-to "Users" "users"}}</li>
-        <li>{{link-to "Notes" "notes"}}</li>
-        <li>{{link-to "Opportunities" "opportunities"}}</li>
+        <li {{action 'makeTrue'}}>{{link-to "Opportunities" "opportunities"}}</li>
         <li><a href="#" {{action 'logout'}}>Logout</a></li>
         {{else}}
         <li>{{link-to "Login" "login"}}</li>
