@@ -1,17 +1,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-    {{#link-to 'home' class="navbar-brand"}}JobTrackr{{/link-to}}
-
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
-        {{#if currentUser}}
-          <li class="active">
-            <a href="#">Hi, {{currentUser.firstName}}</a>
-          </li>
-          {{/if}}
+      {{#if currentUser}}
+      <li class="active">
+        <a href="#">Hi, {{currentUser.firstName}}</a>
+      </li>
+      {{/if}}
+    <li>{{#link-to 'home' class="navbar-brand"}}JobTrackr{{/link-to}}</li>
+
 
         {{#if session.isAuthenticated}}
         <li {{action 'makeTrue'}}>{{link-to "Opportunities" "opportunities"}}</li>

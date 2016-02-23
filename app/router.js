@@ -18,14 +18,6 @@ Router.map(function() {
 
   this.route('login');
   this.route('signup');
-
-  this.route('notes', function() {
-    this.route('note', {
-      path: ':note_id'
-    });
-  });
-  this.route('dashboard');
-  this.route('contacts');
   this.route('home');
 });
 
