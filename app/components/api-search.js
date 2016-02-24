@@ -70,8 +70,21 @@ export default Ember.Component.extend({
 
     event.target.parentElement.className = "added-event"
     jQuery('.added-event').html("<em>Added to your opportunities. Go hustle!</em>")
-  }
+  },
 
+  actions: {
+    newFromHome() {
+      var name = jQuery('#opportunity-name')[0].value
+      var position = jQuery('#opportunity-position')[0].value
+      var description = jQuery('#opportunity-description')[0].value
+
+      this.sendAction('action', name, position, description);
+      this.set('name', "");
+      this.set('position', "");
+      this.set('description', "");
+      this.sendAction('clearForm');
+    }
+  }
 });
 
 
