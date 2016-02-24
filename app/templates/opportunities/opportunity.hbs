@@ -52,9 +52,10 @@
           <div class="panel panel-info">
             <div class="panel-heading">
                 <p>{{note.content}}</p>
+
                 <!-- {{debugger}} -->
-                <!-- <embed src="https://s3.amazonaws.com/job-trackr/uploads/note/note/56/grand_tour.pdf?X-Amz-Date=20160224T030918Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=963db5bb8c944c680f6ef5927037bd7454e6a34053d803b7455f4867935d755e&X-Amz-Credential=ASIAIOV2X52FUUR3YBTQ/20160224/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEE8agAIZfsTkhsNBdviqain1i9ExD/nnwejqz1337pINWyXQM7qJDekVBXEnX1nF3YhNS628K58yXydOSwuQo%2B5InCMibK/ku/OWUz2vGizt5vySucO7pGdwcVNkRXYOsI/QE4mLSmw1mIe6ap8Ru7zlAAfUp7oqbIaN1GNQnGMmhHKzsMIz441tElXvl70St7oC8GMPjHX2mqaVSq9OQsqe3T12Iixmaw5M8ri2aQaazAn5rsmmgTmH9MkUfkQ9cVQjNwrCEDB4mFgvPbB7toXM4ZdTtKTxWbh5bn3GBNNyKImPysnXRquZ4rTyzg9uGULVC9xHVHzmqJoqnyMt5NKst6wPIKaus7YF" width="100" height="200" type='application/pdf'> -->
-                <!-- <p>{{note.attachment}}</p> -->
+                <iframe src="{{note.attachmentUrl}}"
+style="width:300px; height:300px;" frameborder="0"></iframe>
                 <br>
 
                 <em>{{format-date note.created_at}}</em><br>

@@ -4,5 +4,5 @@ import Devise from 'ember-simple-auth/authenticators/devise';
 export default DeviseAuthenticator.extend();
 
 export default Devise.extend({
-  serverTokenEndpoint: 'https://job-tracker-api.herokuapp.com/users/sign_in'
+  serverTokenEndpoint: 'http://localhost:3000/users/sign_in'
 });
