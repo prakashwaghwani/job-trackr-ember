@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   currentUser: null,
   session: Ember.inject.service('session'),
-  needs:['opportunities'],
-  showEverything: Ember.computed.alias('controllers.opportunities.showEverything'),
+  opportunities: Ember.inject.controller(),
+  showEverything: Ember.computed.alias('opportunities.showEverything'),
 
   updateCurrentUser: function(){
 
