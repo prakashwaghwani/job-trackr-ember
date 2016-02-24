@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
   actions: {
     addOpportunity(name, position, description){
       let newOpportunity = this.store.createRecord('opportunity', {name: name, position: position, description: description});
