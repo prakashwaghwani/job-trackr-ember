@@ -1,5 +1,7 @@
 <form>
   {{textarea value=content cols="50" rows="10"}}
+  <p>{{input value=attachment type='file' id='file-field'}}</p>
+    <!-- <img src="{{attachment}}" id="preview-image" class="small-image" /></p> -->
   <br>
   <button class="btn btn-primary btn-sm" {{action "submit"}}>Create Note</button>
 </form>

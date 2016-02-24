@@ -6,9 +6,11 @@ export default Ember.Route.extend({
     return this.store.findRecord('opportunity', params.opportunity_id);
   },
   actions: {
-    createNote(content){
+    createNote(content, attachment){
       let opportunity = this.modelFor(this.routeName);
-      let newNote = this.store.createRecord('note',{content: content, opportunity: opportunity});
+      let newNote = this.store.createRecord('note',{content: content,attachment: attachment, opportunity: opportunity});
+      var file = document.getElementById('file-field').files[0];
+      newNote.set('attachment', file);
       newNote.save();
     },
     createContact(name,phone,email){

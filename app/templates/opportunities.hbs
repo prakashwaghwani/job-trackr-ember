@@ -3,11 +3,18 @@
 {{else}}
 <div class="row">
   <div class="col-md-5">
+    <div class="panel panel-info">
+      <div class="panel-body">
     <h2 id="title">Welcome to Your Dashboard!!</h2>
     <h3><a href="/opportunities" {{action 'newOpportunity'}}>Add an Opportunity</a></h3>
-    {{#if showOpportunityForm}}
-    {{opportunity-forms action="addOpportunity" clearForm="newOpportunity"}}
-    {{/if}}
+    <div class="col-md-10">
+      {{#if showOpportunityForm}}
+      {{opportunity-forms action="addOpportunity" clearForm="newOpportunity"}}
+      {{/if}}
+
+    </div>
+  </div>
+  </div>
   </div>
 
   <div id="opportunities" class="col-md-6 col-md-offset-1">
@@ -15,10 +22,14 @@
       <h2 id="title">All Opportunities</h2>
       {{#each model as |opportunity|}}
         <li>
-          <h3 {{action "toggleOpportunity" opportunity.id}}>{{opportunity.name}}</h3>
-          {{opportunity.position}}<br>
-          {{opportunity.description}}<br>
-          <button class="btn btn-primary btn-sm" {{action 'delete' opportunity}}>Delete</button>
+          <div {{action "toggleDelete" opportunity}}>
+            <h3 class="text-info"{{action "toggleOpportunity" opportunity.id}}>{{opportunity.name}}</h3>
+            {{opportunity.position}}<br>
+            {{opportunity.description}}<br>
+            {{#if showDelete}}
+            <button class="btn btn-primary btn-sm" {{action 'delete' opportunity}}>Delete</button>
+            {{/if}}
+          </div>
         </li>
       {{/each}}
     </ul>
