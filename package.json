@@ -21,6 +21,7 @@
   "devDependencies": {
     "active-model-adapter": "2.1.1",
     "broccoli-asset-rev": "^2.2.0",
+    "broccoli-merge-trees": "^1.1.1",
     "ember-cli": "1.13.15",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
@@ -31,6 +32,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-ic-ajax": "0.2.4",
     "ember-cli-inject-live-reload": "^1.3.1",
+    "ember-cli-pdf-js": "0.0.1",
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
     "ember-cli-sri": "^1.2.0",
@@ -38,6 +40,7 @@
     "ember-data": "1.13.15",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
+    "ember-pdfjs": "0.1.4",
     "ember-simple-auth": "1.0.1"
   }
 }
