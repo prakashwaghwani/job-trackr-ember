@@ -7,7 +7,8 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'connect-src': "*"
+      // "content_security_policy": "default-src https://job-trackr.s3.amazonaws.com style-src 'self' 'unsafe-inline'",
+      // 'connect-src': "*"
     },
 
     EmberENV: {
