@@ -4,16 +4,16 @@ export default Ember.Component.extend({
   change: function(data) {
     jQuery('.github-search-results').html("")
 
-    var skill = jQuery('#search-form input')[0].value
-    var location = jQuery('#search-form input')[1].value.replace(" ", "+")
+    var skill = jQuery('#search-form input')[0].value;
+    var location = jQuery('#search-form input')[1].value.replace(" ", "+");
 
     // https://jobs.github.com/positions.json?description=python&location=new+york?callback=?
-    var uri = "https://jobs.github.com/"
-    var skillParam = "positions.json?description=" + skill
-    var locationParam = "&location=" + location
+    var uri = "https://jobs.github.com/";
+    var skillParam = "positions.json?description=" + skill;
+    var locationParam = "&location=" + location;
     // var callbackThing = "?callback=?"
-    
-    var endpoint = uri + skillParam + locationParam
+
+    var endpoint = uri + skillParam + locationParam;
 
     if (skill.length > 0 || location.length > 0) {
       //gitHub Results
@@ -41,8 +41,8 @@ export default Ember.Component.extend({
                 <br>
               </div>
             `
-            )
-        })
+          );
+        });
       });
 
       //stackOverflow Results
@@ -51,16 +51,16 @@ export default Ember.Component.extend({
       //the muse results
       //Request URL: https://api-v1.themuse.com/jobs?category%5B%5D=Engineering
       //https://api-v1.themuse.com/jobs?category%5B%5D=Engineering&level%5B%5D=Mid+Level&level%5B%5D=Senior+Level&location%5B%5D=Boulder%2C+CO&descending=true&flexible=true
-    };
+    }
     return true;
   },
 
   submit(){
-    event.preventDefault()
+    event.preventDefault();
 
-    var name = event.target.children[0].value //"Application Engineer - Network Intelligence @ GitHub"
-    var position = event.target.children[1].value //"Application Engineer - Network Intelligence"
-    var description = "listing: " + event.target.children[2].value 
+    var name = event.target.children[0].value; //"Application Engineer - Network Intelligence @ GitHub"
+    var position = event.target.children[1].value; //"Application Engineer - Network Intelligence"
+    var description = "listing: " + event.target.children[2].value;
 
     this.sendAction('action', name, position, description);
     this.set('name', "");
@@ -68,8 +68,8 @@ export default Ember.Component.extend({
     this.set('description', "");
     this.sendAction('clearForm');
 
-    event.target.parentElement.className = "added-event"
-    jQuery('.added-event').html("<em>Added to your opportunities. Go hustle!</em>")
+    event.target.parentElement.className = "added-event";
+    jQuery('.added-event').html("<em>Added to your opportunities. Go hustle!</em>");
   },
 
   actions: {
@@ -86,12 +86,3 @@ export default Ember.Component.extend({
     }
   }
 });
-
-
-
-
-
-
-
-
-

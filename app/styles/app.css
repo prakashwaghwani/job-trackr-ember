@@ -1,1 +1,4 @@
 /*@import "bootstrap";*/
+.active {
+  text-transform: capitalize;
+}
