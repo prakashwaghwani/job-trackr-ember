@@ -7,7 +7,7 @@
         <a>Hi, {{currentUser.firstName}}</a>
       </li>
       {{/if}}
-    <li>{{#link-to 'home' class="navbar-brand"}}JobTrackr{{/link-to}}</li>
+    <li>{{#link-to 'home' class="navbar-brand"}}JobTracker{{/link-to}}</li>
 
         {{#if session.isAuthenticated}}
         <li {{action 'makeTrue'}}>{{link-to "Opportunities" "opportunities"}}</li>
