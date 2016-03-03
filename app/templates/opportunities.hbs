@@ -5,16 +5,18 @@
   <div class="col-md-5">
     <div class="panel panel-info">
       <div class="panel-body">
-    <h2 id="title">Welcome to Your Dashboard!!</h2>
-    <h3><a href="/opportunities" {{action 'newOpportunity'}}>Add an Opportunity</a></h3>
-    <div class="col-md-10">
-      {{#if showOpportunityForm}}
-      {{opportunity-forms action="addOpportunity" clearForm="newOpportunity"}}
-      {{/if}}
-
+        <h2 id="title">Welcome to Your Dashboard!!</h2>
+        <h3><a href="/opportunities" {{action 'newOpportunity'}}>Add an Opportunity</a></h3>
+        <div class="col-md-10">
+          {{#if showOpportunityForm}}
+          {{opportunity-forms action="addOpportunity" clearForm="newOpportunity"}}
+          {{/if}}
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
+    <br><br>
+    <h2>Stats</h2>
+    <p>Opportunities: <strong>{{model.length}}</strong></p>
   </div>
 
   <div id="opportunities" class="col-md-6 col-md-offset-1">
@@ -33,6 +35,10 @@
         </li>
       {{/each}}
     </ul>
+  </div>
+
+  <div class="col-md-5">
+    <h1>Some shit</h1>
   </div>
 </div>
 {{/if}}
