@@ -4,7 +4,7 @@
 }
 
 #bg {
-  background: url('http://ugatfaigao.org/wp-content/uploads/2014/04/3-nyc-downtown-nina-papiorek.jpg') no-repeat center fixed;
+  background: url('http://pre03.deviantart.net/3ea1/th/pre/f/2008/308/d/2/ny_grey_sky_by_gaaraofhsv.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,7 +15,6 @@
  /* Set up proportionate scaling */
  width: 100%;
  height: auto;
-
  /* Set up positioning */
  position: fixed;
  top: 100;
